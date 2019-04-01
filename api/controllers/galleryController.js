@@ -19,8 +19,7 @@ module.exports = {
         return res.json(all);
       }
     } catch (e) {
-      return res.serverError();
-
+      return res.serverError(e);
     }
   }
 };

@@ -1,4 +1,32 @@
 {
+  "_args": [
+    [
+      "git+https://github.com/Piminus/website.git",
+      "/home/egich/WebstormProjects/website-test"
+    ]
+  ],
+  "_from": "git+https://github.com/Piminus/website.git",
+  "_id": "@webresto/website@git+https://github.com/Piminus/website.git#30529ae141aabcea56caf5e7fd97584654bd7c12",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/@webresto/website",
+  "_phantomChildren": {
+    "lodash": "4.17.11"
+  },
+  "_requested": {
+    "type": "git",
+    "raw": "git+https://github.com/Piminus/website.git",
+    "rawSpec": "git+https://github.com/Piminus/website.git",
+    "saveSpec": "git+https://github.com/Piminus/website.git",
+    "fetchSpec": "https://github.com/Piminus/website.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "git+https://github.com/Piminus/website.git#30529ae141aabcea56caf5e7fd97584654bd7c12",
+  "_spec": "git+https://github.com/Piminus/website.git",
+  "_where": "/home/egich/WebstormProjects/website-test",
   "author": {
     "name": "Egich"
   },
@@ -11,11 +39,11 @@
   "license": "ISC",
   "main": "index.js",
   "name": "@webresto/website",
+  "sails": {
+    "isHook": true
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "1.0.0",
-  "sails": {
-    "isHook": true
-  }
+  "version": "1.0.0"
 }

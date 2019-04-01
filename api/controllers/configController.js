@@ -4,9 +4,13 @@ module.exports = {
 
     try {
       if (key) {
-        const config = await Configuration.findByKey(key);
+        const config = await Configuration.findOneByKey(key);
+        if (!config) {
+          return res.badRequest("Ivalid key");
+        }
+          let value = config.value;
 
-        return res.json(config);
+          return res.json(value);
       }
 
       if (!key) {
@@ -14,7 +18,7 @@ module.exports = {
         return res.json(config);
       }
     } catch (e) {
-      return res.serverError();
+      return res.serverError(e);
     }
 
   }
