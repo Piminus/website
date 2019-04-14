@@ -1,5 +1,12 @@
 module.exports = {
   attributes: {
-    email: 'string'
+    email: {
+      type: 'string',
+      unique: true
+    },
+    isDeleted: {
+      type: 'boolean',
+      defaultsTo: false
+    }
   }
 };

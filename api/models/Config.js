@@ -7,13 +7,15 @@ module.exports = {
 
   findAll: async function() {
     try {
-      const allConfigs = await this.find();
+      sails.log('find');
+      const allConfigs = await Config.find();
       let temp = {};
-      let result = allConfigs.reduce((previousValue, currentItem, index, arr) => {
-        temp[currentItem.key] = currentItem.value;
-        return temp;
-
-      }, '');
+      sails.log(allConfigs);
+      let result = {};
+      allConfigs.forEach(item =>{
+        result[item.key] = item.value;
+      });
+      sails.log(result);
 
       return result;
     } catch (e) {

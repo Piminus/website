@@ -12,8 +12,11 @@ module.exports = {
       phone: phone
     };
 
-    if (!(name && phone)) {
-      return res.badRequest();
+    if (!name) {
+      return res.badRequest("Введите имя");
+    }
+    if (!phone) {
+      return res.badRequest("Введите телефон");
     }
 
     await Feedback.create(data);
@@ -21,12 +24,9 @@ module.exports = {
     fs.readFile(config.path.feedbackTemplate, async function (err, mail_file) {
       if (err) return res.serverError(err);
       mail_file = mail_file.toString('utf-8');
-      console.log(mail_file + " mail_file");
       const str = ejs.render(mail_file, data);
-      sails.log(str + " rendered");
 
       try {
-        sails.log('mail');
         await mailSend(str, config.email.support);
         return res.ok();
       } catch (e) {
